@@ -3,6 +3,7 @@ import HelloWorld from "./components/HelloWorld";
 import SayMyName from "./components/SayMyName";
 import Pessoa from "./components/Pessoa";
 import Frase from "./components/Frase";
+import List from "./components/List";
 
 function App() {
   const name = "Rafael";
@@ -19,6 +20,7 @@ function App() {
         profissao="Programador"
         foto="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s"
       />
+      <List />
     </div>
   );
 }
