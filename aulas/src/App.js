@@ -1,15 +1,12 @@
 import "./App.css";
-import Evento from "./components/Evento";
-import Form from "./components/Form";
-
+import ListLinguagens from "./components/ListLinguagens";
 function App() {
-  const name = "Rafael";
+  const meusItens = ["React", "Vue", "Angular"];
   return (
     <div className="App">
-      <h1>Testando Eventos</h1>
-      <Evento numero="1" />
-
-      <Form />
+      <h1>Rendenização de listas: </h1>
+      <ListLinguagens itens={meusItens} />
+      <ListLinguagens itens={""} />
     </div>
   );
 }
