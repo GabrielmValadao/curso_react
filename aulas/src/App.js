@@ -1,11 +1,12 @@
 import "./App.css";
-import Condicional from "./components/Condicional";
+import ListLinguagens from "./components/ListLinguagens";
 function App() {
-  const name = "Rafael";
+  const meusItens = ["React", "Vue", "Angular"];
   return (
     <div className="App">
-      <h1>Rendenização condicional - IF </h1>
-      <Condicional />
+      <h1>Rendenização de listas: </h1>
+      <ListLinguagens itens={meusItens} />
+      <ListLinguagens itens={""} />
     </div>
   );
 }
