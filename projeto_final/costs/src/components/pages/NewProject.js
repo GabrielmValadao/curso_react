@@ -22,7 +22,9 @@ function NewProject() {
       .then((data) => {
         console.log(data);
         // redirecionamento
-        navigate("/projects");
+        navigate("/projects", {
+          state: { message: "Projeto criado com sucesso" },
+        });
       })
       .catch((error) => console.log(error));
   }
