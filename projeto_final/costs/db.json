@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "id": "b1c3",
+      "name": "teste5",
+      "budget": "4328943728",
+      "categorie": {
+        "id": "3",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "ccf7",
+      "name": "teste5",
+      "budget": "3427843278",
+      "categorie": {
+        "id": "3",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "94c3",
+      "name": "teste 6",
+      "budget": "4738247328",
+      "categorie": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Infra"
+    },
+    {
+      "id": "2",
+      "name": "Design"
+    },
+    {
+      "id": "3",
+      "name": "Desenvolvimento"
+    },
+    {
+      "id": "4",
+      "name": "Planejamento"
+    }
+  ]
+}
