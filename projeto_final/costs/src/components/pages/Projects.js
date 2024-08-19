@@ -1,6 +1,10 @@
 import { useLocation } from "react-router-dom";
 
+import sytles from "./Projects.module.css";
+
 import Message from "../layout/Message";
+import Container from "../layout/Container";
+import LinkButton from "../layout/LinkButton";
 
 function Projects() {
   const location = useLocation();
@@ -9,9 +13,15 @@ function Projects() {
     message = location.state.message;
   }
   return (
-    <div>
-      <h1>Meus Projetos</h1>
+    <div className={sytles.project_container}>
+      <div className={sytles.title_container}>
+        <h1>Meus Projetos</h1>
+        <LinkButton to="/newproject" text="Criar Projeto" />
+      </div>
       {message && <Message type="sucess" msg={message} />}
+      <Container customClass="start">
+        <p>Projetos</p>
+      </Container>
     </div>
   );
 }
