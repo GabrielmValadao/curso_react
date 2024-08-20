@@ -1,11 +1,14 @@
 import styles from "./Project.module.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Loading from "../layout/Loading";
+import Container from "../layout/Container";
 
 function Project() {
   const { id } = useParams();
   const [project, setProject] = useState(null);
   const [error, setError] = useState(null); // Estado para armazenar mensagens de erro
+  const [showProjectForm, setShowProjectForm] = useState(false);
 
   useEffect(() => {
     if (id) {
@@ -36,13 +39,51 @@ function Project() {
   }
 
   if (!project) {
-    return <p>Carregando...</p>; // Estado de carregamento
+    return (
+      <>
+        <Loading />
+      </>
+    );
+  }
+
+  function toggleProjectForm() {
+    setShowProjectForm(!showProjectForm);
   }
 
   return (
-    <div className={styles.project_container}>
-      <p>{project.name}</p>
-    </div>
+    <>
+      {project.name ? (
+        <div>
+          <Container customClass="column">
+            <div>
+              <h1>Projeto: {project.name}</h1>
+              <button onClick={toggleProjectForm}>
+                {!showProjectForm ? "Editar projeto" : "Fechar"}
+              </button>
+              {!showProjectForm ? (
+                <div>
+                  <p>
+                    <span>Categoria: {project.categorie.name}</span>
+                  </p>
+                  <p>
+                    <span>Total de orçamento: R$ {project.budget}</span>
+                  </p>
+                  <p>
+                    <span>Total utilizado: R$ {project.cost}</span>
+                  </p>
+                </div>
+              ) : (
+                <div>
+                  <p>detalhes do projeto</p>
+                </div>
+              )}
+            </div>
+          </Container>
+        </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 }
 
