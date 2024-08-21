@@ -2,11 +2,22 @@
   "projects": [
     {
       "id": "b495",
-      "name": "Projeto desenvolvedor de desing",
+      "name": "deve de desing",
       "budget": "60.000",
       "categorie": {
         "id": "2",
         "name": "Design"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "6fc8",
+      "name": "Estudos OAB",
+      "budget": "3.400",
+      "categorie": {
+        "id": "4",
+        "name": "Planejamento"
       },
       "cost": 0,
       "services": []
