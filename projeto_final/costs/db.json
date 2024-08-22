@@ -8,15 +8,8 @@
         "id": "2",
         "name": "Design"
       },
-      "cost": 10,
-      "services": [
-        {
-          "name": "Contrato professores",
-          "cost": "10.000",
-          "descriptiom": "Contrato de professores especializados em design",
-          "id": "7e8be69e-5020-459a-84e8-0aba3a0ebb02"
-        }
-      ]
+      "cost": 0,
+      "services": []
     },
     {
       "id": "6fc8",
