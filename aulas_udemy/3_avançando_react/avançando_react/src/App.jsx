@@ -37,6 +37,9 @@ function App() {
       <ShowUserName name={userName} />
       {/* destructuring */}
       <CarDetails brand="Chevrolet" km={100} color="Vermelho"/>
+      <CarDetails brand="Ford" km={0} color="Cinza" newCar={true} />
+      <CarDetails brand="Fiat" km={4500} color="Branco" newCar={false} />
+      <CarDetails brand="Tesla" km={0} color="Azul espacial" newCar={true}/>
     </div>
   )
 }
