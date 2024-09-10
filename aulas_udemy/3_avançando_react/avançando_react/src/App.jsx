@@ -1,11 +1,20 @@
+import { useState } from 'react'
+
+// style
 import './App.css'
 
+// img
 import City from './assets/city.jpg'
+
+// components
 import ListRender from './components/ListRender'
 import ManageData from './components/ManageData'
 import ConditionalRender from './components/ConditionalRender'
+import ShowUserName from './components/ShowUserName'
 
 function App() {
+
+  const [userName] = useState("José")
 
   return (
     <div>
@@ -22,7 +31,8 @@ function App() {
       <ManageData/>
       <ListRender/>
       <ConditionalRender/>
-
+      <ShowUserName name="Gabriel" />
+      <ShowUserName name={userName} />
     </div>
   )
 }
