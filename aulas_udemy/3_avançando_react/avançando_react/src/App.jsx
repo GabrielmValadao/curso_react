@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {  useState } from 'react'
 
 // style
 import './App.css'
@@ -12,6 +12,7 @@ import ManageData from './components/ManageData'
 import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
+import Fragment from './components/Fragment'
 
 function App() {
 
@@ -49,7 +50,7 @@ function App() {
       <CarDetails brand="Ford" km={0} color="Cinza" newCar={true} />
       <CarDetails brand="Fiat" km={4500} color="Branco" newCar={false} />
       <CarDetails brand="Tesla" km={0} color="Azul espacial" newCar={true}/>
-      
+
       {/* loop em array de objetos */}
       {cars.map((car) => (
         <CarDetails 
@@ -59,6 +60,9 @@ function App() {
         newCar={car.newCar} 
         />
       ))}
+
+      {/* fragment */}
+      <Fragment propFragment="teste"/>
     </div>
   )
 }
