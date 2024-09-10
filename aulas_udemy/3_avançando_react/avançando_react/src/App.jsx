@@ -14,6 +14,7 @@ import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
 import Fragment from './components/Fragment'
 import Container from './components/Container'
+import ExecuteFunction from './components/ExecuteFunction'
 
 function App() {
 
@@ -24,6 +25,10 @@ function App() {
     {id: 2, brand:"Ferrari", color: "Vermelho", newCar: true, km: 0 },
     {id: 3, brand:"Porsche", color: "Laranja", newCar: false, km: 15000 }
   ]
+
+  function showMessage() {
+    console.log("clicou aqui")
+  }
 
   return (
     <div>
@@ -54,7 +59,8 @@ function App() {
 
       {/* loop em array de objetos */}
       {cars.map((car) => (
-        <CarDetails 
+        <CarDetails
+        key={car.id} 
         brand={car.brand} 
         color={car.color} 
         km={car.km} 
@@ -72,6 +78,9 @@ function App() {
       <Container myValue="teste2">
         <h5>Testando o container</h5>
       </Container>
+
+      {/* executar função com prop */}
+      <ExecuteFunction myFunction={showMessage} />
     </div>
   )
 }
