@@ -3,6 +3,7 @@ import './App.css'
 import City from './assets/city.jpg'
 import ListRender from './components/ListRender'
 import ManageData from './components/ManageData'
+import ConditionalRender from './components/ConditionalRender'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       </div>
       <ManageData/>
       <ListRender/>
+      <ConditionalRender/>
 
     </div>
   )
