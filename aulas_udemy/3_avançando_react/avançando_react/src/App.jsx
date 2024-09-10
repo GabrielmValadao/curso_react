@@ -13,6 +13,7 @@ import ConditionalRender from './components/ConditionalRender'
 import ShowUserName from './components/ShowUserName'
 import CarDetails from './components/CarDetails'
 import Fragment from './components/Fragment'
+import Container from './components/Container'
 
 function App() {
 
@@ -63,6 +64,14 @@ function App() {
 
       {/* fragment */}
       <Fragment propFragment="teste"/>
+
+      {/* children */}
+      <Container myValue="teste">
+        <p>Conteudo do container</p>
+      </Container>
+      <Container myValue="teste2">
+        <h5>Testando o container</h5>
+      </Container>
     </div>
   )
 }
