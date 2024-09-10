@@ -17,6 +17,8 @@ import Container from './components/Container'
 import ExecuteFunction from './components/ExecuteFunction'
 import Message from './components/Message'
 import ChangeMessageState from './components/ChangeMessageState'
+// desafio da seção 
+import UserDetails from './components/UserDetails'
 
 function App() {
 
@@ -26,6 +28,14 @@ function App() {
     {id: 1, brand:"BYD", color: "Cinza", newCar: true, km: 0 },
     {id: 2, brand:"Ferrari", color: "Vermelho", newCar: true, km: 0 },
     {id: 3, brand:"Porsche", color: "Laranja", newCar: false, km: 15000 }
+  ]
+
+  // desafio da seção 
+  const users = [
+    {id: 1, name: "Gabriel", age: 26, profession: "Dev. full stack"},
+    {id: 2, name: "Milena", age: 25, profession: "Auxiliar jurídica"},
+    {id: 3, name: "Silvana", age: 53, profession: "Vendedora"},
+    {id: 4, name: "João", age: 17, profession: "Estudante"}
   ]
 
   function showMessage() {
@@ -94,6 +104,16 @@ function App() {
       {/* state lift */}
       <Message msg={message}/>
       <ChangeMessageState handleMessage={handleMessage}/>
+
+      {/* desafio seção */}
+      {users.map((user) => (
+        <UserDetails
+        key= {user.id}
+        name= {user.name}
+        age= {user.age}
+        profession={user.profession}
+        />
+      ))}
     </div>
   )
 }
