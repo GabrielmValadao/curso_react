@@ -13,6 +13,9 @@ function App() {
         <MyComponent />
         <p>Este paragrafo é do App.js</p>
 
+        {/* CSS inline */}
+        <p style={{color: 'white', padding: '25px', borderTop: '2px solid black'}}>Este elemento foi estilisado de forma inline</p>
+
       </div>
   )
 }
