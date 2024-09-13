@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './App.css'
 import MyComponent from './components/MyComponent'
 import Title from './components/Title'
+import Challenge from './components/Challenge'
+import Cars from './components/Cars'
 
 function App() {
 
@@ -10,6 +12,13 @@ function App() {
   const [name] = useState("Gabriel")
 
   const redTitle = true
+
+  // Desafio seção 4
+  const myCars = [
+    {name: 'Onix', km: 10000, color: 'Branca'},
+    {name: 'Mobi', km: 15000, color: 'Preta'},
+    {name: 'Up', km: 12000, color: 'Cinza'},
+  ]
 
   return (
       <div className='App'>
@@ -35,7 +44,14 @@ function App() {
         <Title />
         <h2 className='my_title'>Outro título</h2>
 
-        
+        {/* Desafio seção 4 */}
+        <Challenge />
+        <h1>Showroom de carros</h1>
+        <div className='car-container'>
+          {myCars.map((car) => (
+            <Cars car={car} />
+          ))}
+        </div>
 
       </div>
   )

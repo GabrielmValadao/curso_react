@@ -20,3 +20,12 @@ h1 {
   background-color: #000;
   color: #fff;
 }
+
+.car-container {
+  display: flex;
+  justify-content: center;
+}
+
+.car-container div {
+  margin-top: 50px;
+}
