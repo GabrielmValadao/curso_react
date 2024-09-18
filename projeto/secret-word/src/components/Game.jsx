@@ -23,8 +23,8 @@ const Game = ({verifyLetter}) => {
       </div>
       <div className="wrongLettersContainer">
         <p>Letras já utilizadas</p>
-        <span>A, </span>
-        <span>B, </span>
+        <span>a, </span>
+        <span>b, </span>
       </div>
     </div>
   )
