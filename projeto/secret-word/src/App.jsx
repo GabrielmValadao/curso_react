@@ -27,6 +27,11 @@ function App() {
   const [pickedCategory, setPickedCategory] = useState('')
   const [letters, setLetters] = useState([])
 
+  const [guessedLetters, setGuessedLetters] = useState([])
+  const [wrongLetters, setWrongLetters] = ([])
+  const [guesses, setGuesses] = useState(3)
+  const [score, setScore] = useState(0)
+
   const pickWordAndCategory = () => {
     // pega uma categoria aleatória
     const categories = Object.keys(words)
@@ -49,7 +54,6 @@ function App() {
 
     // cria array de letras separadas
     let wordLetters = word.split('')
-    console.log(wordLetters)
 
     // retira maisculo da primeira letra
     wordLetters = wordLetters.map((l) => l.toLowerCase())
@@ -57,7 +61,7 @@ function App() {
 
     setPickedWord(word)
     setPickedCategory(category)
-    setLetters(letters)
+    setLetters(wordLetters)
 
     setGameStage(stages[1].name)
 
@@ -76,7 +80,16 @@ function App() {
   return (
     <div className='App'>
       {gameStage === 'start' && <StartScreen startGame={startGame} />}
-      {gameStage === 'game' && <Game verifyLetter={verifyLetter}/>}
+      {gameStage === 'game' && <Game 
+      verifyLetter={verifyLetter} 
+      pickedWord={pickedWord} 
+      pickedCategory={pickedCategory} 
+      letters={letters}
+      guessedLetters={guessedLetters}
+      wrongLetters={wrongLetters}
+      guesses={guesses}
+      score={score}
+      />}
       {gameStage === 'end' && <GameOver retry={retry}/>}
     </div>
   )
