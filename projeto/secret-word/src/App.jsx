@@ -32,9 +32,9 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
   const [guesses, setGuesses] = useState(guessesQty)
-  const [score, setScore] = useState('')
+  const [score, setScore] = useState(0)
 
-  const pickWordAndCategory = () => {
+  const pickWordAndCategory = useCallback(() => {
     // pega uma categoria aleatória
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
@@ -48,10 +48,15 @@ function App() {
 
     return {category, word}
 
-  }
+  }, [words])
 
   // start 
-  const startGame = () => {
+  const startGame = useCallback(() => {
+
+    // limpa todas as letras
+    clearLetterStates()
+
+    // paga a categoria e palavra
     const { category, word } = pickWordAndCategory()
 
     // cria array de letras separadas
@@ -66,13 +71,13 @@ function App() {
     setLetters(wordLetters)
 
     setGameStage(stages[1].name)
-
-  }
+  
+  }, [pickWordAndCategory])
 
   // processa a letra do input
   const verifyLetter = (letter) => {
     
-    const normalizedLetter = letter.toUpperCase()
+    const normalizedLetter = letter.toLowerCase()
 
     // checagem se a letra ja foi utilizada
     if(guessedLetters.includes(normalizedLetter) || 
@@ -101,6 +106,7 @@ function App() {
     setWrongLetters([])
   }
 
+    // verifica se as chances terminaram
     useEffect(() => {
       if(guesses <= 0) {
         // reseta os states
@@ -109,6 +115,22 @@ function App() {
         setGameStage(stages[2].name)
       }
     }, [guesses])
+
+    // verifica se o usuario acertou
+    useEffect(() => {
+
+      const uniqueLetters = [...new Set(letters)]
+      
+      // condição de vitoria
+      if(guessedLetters.length === uniqueLetters.length) {
+        // adiciona pontuação
+        setScore((actualScore) => actualScore += 100)
+
+        //  restar jogo com uma nova palavra
+        startGame()
+      }
+
+    }, [guessedLetters, letters, startGame])
 
   // reinicia o jogo
   const retry = () => {
