@@ -32,7 +32,7 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
   const [guesses, setGuesses] = useState(guessesQty)
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState('')
 
   const pickWordAndCategory = () => {
     // pega uma categoria aleatória
@@ -131,7 +131,7 @@ function App() {
       guesses={guesses}
       score={score}
       />}
-      {gameStage === 'end' && <GameOver retry={retry}/>}
+      {gameStage === 'end' && <GameOver retry={retry} score={score}/>}
     </div>
   )
 }
