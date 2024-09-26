@@ -12,14 +12,14 @@ function App() {
   const [products, setProducts] = useState([])
 
   // 4 - custom hook
-  const { data: items } = useFetch(url)
+  const { data: items, httpConfig, loading } = useFetch(url)
 
 
   // 2- adiciona produtos
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
 
-  // 1- resgatando dados
+  // 1- resgatando dados CODIGO FEITO DENTRO DO useFetch
   // useEffect(() => {
   //   async function fetchData() {
   //     const response = await fetch(url)
@@ -42,18 +42,21 @@ function App() {
     }
 
     // 2- requisição
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        "Content-Type": 'application/json'
-      },
-      body: JSON.stringify(product) 
-    })
+    // const response = await fetch(url, {
+    //   method: 'POST',
+    //   headers: {
+    //     "Content-Type": 'application/json'
+    //   },
+    //   body: JSON.stringify(product) 
+    // })
 
-    // 3- carregamento dinâmico 
-    const addedProduct = await response.json()
+    // // 3- carregamento dinâmico 
+    // const addedProduct = await response.json()
     
-    setProducts((prevProducts) => [...prevProducts, addedProduct])
+    // setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    // 5 - refatorando post 
+    httpConfig(product, 'POST')
 
     setName('')
     setPrice('')
@@ -62,15 +65,19 @@ function App() {
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
-      {/* 1- retorna os itens para a pagina */}
+      {/* 6 - loading */}
+      {loading && <p>Carregando dados</p>}
+      {!loading && 
+      // 1- retorna os itens para a pagina
       <ul>
-        {/* 4 - custom hook, altera o products para items */}
+         {/* 4 - custom hook, altera o products para items  */}
         {items && items.map((product) => (
           <li key={product.id}>
             {product.name} - R$ {product.price}
           </li>
         ))}
-      </ul>
+      </ul>}
+      
 
       {/* 2- adiciona produtos */}
       <div className="add-product">

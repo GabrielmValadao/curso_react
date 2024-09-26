@@ -16,24 +16,19 @@
       "price": 29.9
     },
     {
-      "id": "a1dd",
-      "name": "teste 1",
-      "price": "14"
+      "id": "2237",
+      "name": "Calça jogger",
+      "price": "69"
     },
     {
-      "id": "7651",
-      "name": "teste 2",
-      "price": "16"
+      "id": "40ef",
+      "name": "mouse",
+      "price": "100"
     },
     {
-      "id": "61c5",
-      "name": "teste 3 ",
-      "price": "11"
-    },
-    {
-      "id": "286b",
-      "name": "teste 4",
-      "price": "67"
+      "id": "e8dc",
+      "name": "Teclado",
+      "price": "1300"
     }
   ]
 }
