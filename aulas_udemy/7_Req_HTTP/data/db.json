@@ -14,6 +14,26 @@
       "id": "3",
       "name": "Boné",
       "price": 29.9
+    },
+    {
+      "id": "a1dd",
+      "name": "teste 1",
+      "price": "14"
+    },
+    {
+      "id": "7651",
+      "name": "teste 2",
+      "price": "16"
+    },
+    {
+      "id": "61c5",
+      "name": "teste 3 ",
+      "price": "11"
+    },
+    {
+      "id": "286b",
+      "name": "teste 4",
+      "price": "67"
     }
   ]
 }

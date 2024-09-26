@@ -34,7 +34,7 @@ function App() {
       price,
     }
 
-    // requisição
+    // 2- requisição
     const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -43,13 +43,19 @@ function App() {
       body: JSON.stringify(product) 
     })
 
+    // 3- carregamento dinâmico 
+    const addedProduct = await response.json()
     
+    setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    setName('')
+    setPrice('')
   }
 
   return (
     <div className="App">
       <h1>Lista de produtos</h1>
-      {/* retorna os itens para a pagina */}
+      {/* 1- retorna os itens para a pagina */}
       <ul>
         {products.map((product) => (
           <li key={product.id}>
