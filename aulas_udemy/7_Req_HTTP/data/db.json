@@ -29,36 +29,6 @@
       "id": "e8dc",
       "name": "Teclado",
       "price": "1300"
-    },
-    {
-      "id": "0544",
-      "name": "Teclado",
-      "price": "1300"
-    },
-    {
-      "id": "31be",
-      "name": "microfone",
-      "price": "60"
-    },
-    {
-      "id": "a49c",
-      "name": "microfone",
-      "price": "60"
-    },
-    {
-      "id": "4bd6",
-      "name": "microfone",
-      "price": "60"
-    },
-    {
-      "id": "89b2",
-      "name": "suporte para monitor",
-      "price": "150"
-    },
-    {
-      "id": "22a0",
-      "name": "suporte ",
-      "price": "150"
     }
   ]
 }

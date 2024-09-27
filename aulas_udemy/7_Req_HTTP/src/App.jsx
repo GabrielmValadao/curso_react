@@ -12,7 +12,7 @@ function App() {
   const [products, setProducts] = useState([])
 
   // 4 - custom hook
-  const { data: items, httpConfig, loading } = useFetch(url)
+  const { data: items, httpConfig, loading, error } = useFetch(url)
 
 
   // 2- adiciona produtos
@@ -67,7 +67,8 @@ function App() {
       <h1>Lista de produtos</h1>
       {/* 6 - loading */}
       {loading && <p>Carregando dados</p>}
-      {!loading && 
+      {error && <p>{error}</p>}
+      {!error && 
       // 1- retorna os itens para a pagina
       <ul>
          {/* 4 - custom hook, altera o products para items  */}
