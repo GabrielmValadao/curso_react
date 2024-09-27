@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
       "id": "2",
       "name": "Calça jeans",
       "price": 90
@@ -16,19 +11,14 @@
       "price": 29.9
     },
     {
-      "id": "2237",
-      "name": "Calça jogger",
-      "price": "69"
-    },
-    {
-      "id": "40ef",
-      "name": "mouse",
-      "price": "100"
-    },
-    {
       "id": "e8dc",
       "name": "Teclado",
       "price": "1300"
+    },
+    {
+      "id": "fb84",
+      "name": "Camiseta inter ",
+      "price": "399"
     }
   ]
 }
