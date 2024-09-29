@@ -12,3 +12,14 @@
   margin: 5px 10px;
   width: 33%;
 }
+
+.details {
+  margin: 0 10px;
+  padding: 5px;
+  text-decoration: none;
+  color: yellow;
+}
+
+.details:hover {
+  color: white;
+}
