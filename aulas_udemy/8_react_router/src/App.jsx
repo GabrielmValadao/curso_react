@@ -1,7 +1,7 @@
 import './App.css'
 
 // configura react router
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
 // importa components
 import Navbar from './components/Navbar'
@@ -33,6 +33,8 @@ function App() {
           <Route path='/products/:id/info' element={<Info />}/>
           {/* Search route */}
           <Route path='/search' element={<Search />}/>
+          {/* redirect */}
+          <Route path='/company' element={<Navigate to='/about'/>} />
           {/* No match route */}
           <Route path='*' element={<NotFound/>}/>
         </Routes>
