@@ -14,6 +14,8 @@ import Navbar from './components/Navbar'
 
 // import context
 import {CounterContextProvider} from './context/CounterContext'
+// context mais complexo
+import {TitleColorContextProvider} from './context/TitleColorContext'
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
     <div>
       <h1>Context API - React</h1>  
       <CounterContextProvider>
+        <TitleColorContextProvider>
+
         <BrowserRouter>
           <Navbar />
             <Routes>
@@ -29,6 +33,7 @@ function App() {
               <Route path='/products' element={<Products />} />
             </Routes>
           </BrowserRouter>
+        </TitleColorContextProvider>
       </CounterContextProvider>
      </div>
     
