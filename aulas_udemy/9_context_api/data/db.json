@@ -1,0 +1,19 @@
+{
+    "products": [
+        {
+            "id": "2",
+            "name": "Calça jeans",
+            "price": 90
+        },
+        {
+            "id": "3",
+            "name": "Boné",
+            "price": 29.9
+        },
+        {
+            "id": "e8dc",
+            "name": "Teclado",
+            "price": "1300"
+        }
+    ]
+}
