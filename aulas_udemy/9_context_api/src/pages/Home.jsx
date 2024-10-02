@@ -19,7 +19,12 @@ const Home = () => {
     const {counter} = useCounterContext()
 
   // context mais complexo
-  const {color} = useTitleColorContext()
+  const {color, dispatch} = useTitleColorContext()
+
+  // alterando context mais complexo
+  const setTitleColor = (color) => {
+    dispatch({type: color})
+  }
 
   return (
     <div>
@@ -27,6 +32,13 @@ const Home = () => {
       <p>valor do contador: {counter}</p>
       {/* alterando valor do contexto */}
       <ChangeCounter />
+
+      {/* alterando context mais complexo */}
+      <div>
+        <button onClick={() => setTitleColor("PURPLE")}>Violeta</button>
+        <button onClick={() => setTitleColor("BLUE")}>Azul</button>
+        <button onClick={() => setTitleColor("WHITE")}>Branco</button>
+      </div>
     </div>
   )
 }
