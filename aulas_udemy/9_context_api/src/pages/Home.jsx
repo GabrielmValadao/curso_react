@@ -1,14 +1,19 @@
-import { useContext } from "react"
+// import { useContext } from "react"
 
 // import context
-import { CounterContext } from "../context/CounterContext"
+// import { CounterContext } from "../context/CounterContext"
 
 // altera contador
 import ChangeCounter from "../components/ChangeCounter"
 
-const Home = () => {
-  const {counter} = useContext(CounterContext)
+// refatorando com hook 
+import {useCounterContext} from "../hooks/useCounterContext"
 
+const Home = () => {
+  // const {counter} = useContext(CounterContext)
+
+  // refatorando com hook
+    const {counter} = useCounterContext()
   return (
     <div>
       <h2>Home</h2>
