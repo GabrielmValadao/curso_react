@@ -12,19 +12,24 @@ import Products from './pages/Products'
 // import components
 import Navbar from './components/Navbar'
 
+// import context
+import {CounterContextProvider} from './context/CounterContext'
+
 function App() {
 
   return (
     <div>
       <h1>Context API - React</h1>  
-      <BrowserRouter>
-        <Navbar />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/products' element={<Products />} />
-          </Routes>
-      </BrowserRouter>
+      <CounterContextProvider>
+        <BrowserRouter>
+          <Navbar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/products' element={<Products />} />
+            </Routes>
+          </BrowserRouter>
+      </CounterContextProvider>
      </div>
     
   )
