@@ -5,6 +5,9 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // import components
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+
 
 // import pages
 import Home from './pages/Home/Home'
@@ -15,12 +18,14 @@ function App() {
   return (
     <div className='App'>
       <BrowserRouter>
+      <Navbar />
       <div className="container">
         <Routes>
           <Route path='/' element={<Home />}/>
           <Route path='/about' element={<About />}/>
         </Routes>
       </div>
+      <Footer />
       </BrowserRouter>
     </div>
   
