@@ -5,17 +5,17 @@ import {useState, useEffect} from 'react'
 
 const Register = () => {
   return (
-    <div>
+    <div className={styles.register}>
       <h1>Cadastre-se para postar</h1>
       <p>Crie seu usuário e compartilhe suas histórias!</p>
       <form>
         <label>
-          <span>Nome:</span>
+          <span>Nome</span>
           <input type="text" name='name' required placeholder='Nome do Usuário' />
         </label>
         
         <label>
-          <span>E-mail:</span>
+          <span>E-mail</span>
           <input 
           type="email" 
           name='email' 
@@ -24,7 +24,7 @@ const Register = () => {
         </label>
         
         <label>
-          <span>Senha:</span>
+          <span>Senha</span>
           <input 
           type="password" 
           name='password' 
@@ -33,7 +33,7 @@ const Register = () => {
         </label>
 
         <label>
-          <span>Confirmação de senha:</span>
+          <span>Confirmação de senha</span>
           <input 
           type="password" 
           name='confirmPassword' 
