@@ -23,4 +23,43 @@ export const useAuthentication = () => {
             return
         }
     }
+
+    // REGISTER
+    const createUser = async (data) => {
+        checkIfIsCancelled()
+
+        setLoading(true)
+
+        try {
+            
+            const {user} = createUserWithEmailAndPassword(
+                auth,
+                data.email,
+                data.password
+            )
+
+            await updateProfile(user, {
+                displayName: data.displayName
+            })
+
+            return user
+        } catch (error) {
+            console.log(error)
+            console.log(typeof error.message)
+        }
+
+        setLoading(false)
+    }
+
+
+    useEffect(() => {
+        return () => setCanceled(true)
+    }, [])
+
+    return {
+        auth,
+        createUser,
+        error,
+        loading
+    }
 }
