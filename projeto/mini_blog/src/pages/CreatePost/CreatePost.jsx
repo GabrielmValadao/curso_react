@@ -10,33 +10,49 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
-  const [tags, setTags] = useState("");
+  const [tags, setTags] = useState([]);
   const [formError, setFormError] = useState("");
+
+  const { user } = useAuthValue();
 
   const { insertDocument, response } = useInsertDocument("posts");
 
-  const { user } = useAuthValue();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError("");
 
     // validate image url
+    try {
+      new URL(image);
+    } catch (formError) {
+      setFormError("A imagem precisar ser uma URL");
+      return;
+    }
 
     // criar array de tags
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
-    // checar os valores
+    // checar todos os campos
+    if (!title || !image || !body || !tagsArray) {
+      setFormError("Por favor, preencha todos os campos");
+      return;
+    }
+
+    if (formError) return;
 
     insertDocument({
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
 
     // redirect home page
+    navigate("/");
   };
 
   return (
@@ -100,6 +116,7 @@ const CreatePost = () => {
         )}
 
         {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
       </form>
     </div>
   );
