@@ -22,7 +22,7 @@ const insertReducer = (state, action) => {
   }
 };
 
-export const userInsertDocument = (docColletion) => {
+export const useInsertDocument = (docColletion) => {
   const [response, dispatch] = useReducer(insertReducer, initialState);
 
   //   deal with memory leak
@@ -45,6 +45,8 @@ export const userInsertDocument = (docColletion) => {
         collection(db, docColletion),
         newDocument
       );
+
+      console.log("Adicionando documentos", newDocument);
 
       checkCancelBeforeDispatch({
         type: "INSERTED_DOC",
