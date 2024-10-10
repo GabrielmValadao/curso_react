@@ -1,4 +1,4 @@
-import { useState, useEffetch, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import {
   collection,
@@ -16,7 +16,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
   //   deal with memory leak
   const [cancelled, setCancelled] = useState(false);
 
-  useEffetch(() => {
+  useEffect(() => {
     async function loadData() {
       if (cancelled) return;
 
